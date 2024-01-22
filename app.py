@@ -1079,3 +1079,6 @@ def exchange():
             flash("To exchenage books, the \"None\" fields must be filled first.\n(Except for profile picture)")
             return redirect("/myprofile")
         return render_template("exchange.html", greet=greet_user(), picture=profile_picture(), message_notification=message_notification(), offer_notification=offer_notification(), conditions=conditions)
+
+if __name__ = "__main__":
+    app.run()
