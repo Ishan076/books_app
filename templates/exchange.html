@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Exchange
+{% endblock %}
+
+{% block main %}
+    <div class="mb-5 mt-5 border rounded border-primary-subtle container-md d-inline-flex flex-sm-column flex-wrap justify-content-center">
+        <form action="/exchange" method="post" enctype="multipart/form-data" class="d-inline-flex flex-sm-column flex-wrap justify-content-center align-items-center mt-5">
+            <div class="mb-4 mt-5">
+                <label for="image" class="image-node" id="image-node">
+                    <img src="../static/book.png" class="book-picture rounded-circle mb-4 preview-opacity" alt="Book Picture" id="rounded-circle">
+                </label>
+                <p class="text-muted">You can choose more than one image.</p>
+                <p class="text-muted">(Max 10 images)</p>
+                <p class="image-warn text-danger"></p>
+                <input type="file" name="image" id="image" class="form-control mx-auto w-auto img-input" multiple>
+                
+            </div>
+            <div class="mb-4">
+                <input size="30" type="text" name="book_title" class="form-control form-control-md mx-auto w-auto" id="book_title" placeholder="Book Title" required>
+            </div>
+            <div class="mb-4">
+                <input size="30" type="text" name="book_author" class="form-control form-control-md mx-auto w-auto" id="book_author" placeholder="Book Author" required>
+            </div>
+            <div class="mb-4">
+                <select name="conditions" class="form-select" aria-label="Default select example" style="width: 20rem;">
+                    <option selected disabled hidden>Select Book Condition</option>
+                    {% for condition in conditions %}
+                        <option value="{{ condition }}">{{ condition }}</option>
+                    {% endfor %}
+                </select>
+                <p class="text-muted">Don't know what is this? <a href="https://en.wikipedia.org/wiki/List_of_used_book_conditions" target="_blank">Click here.</a></p>
+            </div>
+            <div class="mb-4 form-floating">
+                <textarea class="form-control exc-form-control" name="description" id="floatingTextarea" maxlength="600" placeholder="Write a description about your book."></textarea>
+                <label for="floatingTextarea">Book description.</label>
+                <p class="text-muted"><span class="counter">600</span> characters left.</p>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg mb-4" style="width: fit-content;">SAVE</button>
+        </form>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script src="../static/exchange.js"></script>
+{% endblock %}

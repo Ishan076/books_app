@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Message - {{ username }}
+{% endblock %}
+
+{% block main %}
+    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#" onclick="history.go(-1)">Turn Back</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Message from {{ username }}</li>
+        </ol>
+    </nav>
+    
+    {% for message in messages %}
+        <div class="mb-5 mt-5 bg-primary" style="height: 100vh;">
+            <pre style="text-align: left;">{{ message.message }}</pre>
+            <p class="text-muted" style="text-align: left; font-size: small;">{{ message.date }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

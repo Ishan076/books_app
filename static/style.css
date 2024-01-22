@@ -1,0 +1,273 @@
+/* https://fonts.google.com/specimen/EB+Garamond?query=eb+garamond */
+/* https://fonts.google.com/specimen/Urbanist?query=urbanist */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    /* FONTS */
+    --headings: 'EB Garamond', serif;
+    --texts: 'Urbanist', sans-serif;
+}
+
+/* RESET THE DEFAULT FEATURES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+ul, li {
+    list-style: none;
+}
+
+/* layout.html */
+body {
+    background-color: var(--background);
+    font-family: var(--texts);
+    font-size: large;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--headings);
+    font-weight: 800;
+    letter-spacing: 2pt;
+}
+.mini-profile-picture {
+    width: 3rem;
+    height: 3rem;
+    object-fit: cover;
+   }
+select {
+    height: 2rem;
+    border: none;
+}
+.navbar-expand-md {
+    font-size: large;
+}
+.border-success {
+    margin-right: 4rem;
+}
+select option {
+    width: 5rem;
+}
+input[placeholder="Search"] {
+    margin: 0 1rem;
+}
+
+/* index.html part */
+.index-card {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.card-capitalize {
+    text-transform: capitalize;
+}
+
+/* Register */
+.reg-select:not(.form-select-md), .mp-select:not(.form-select-md) {
+    width: 23rem;
+    padding-left: 1rem;
+    font-size: large;
+    height: 3rem;
+}
+
+/* My Profile */
+.profile-picture {
+    width: 15rem;
+    height: 15rem;
+    object-fit: cover;
+    cursor: pointer;
+    
+}
+.preview-opacity {
+    opacity: .5;
+}
+.bi-book-fill {
+    color: darkgray;
+    font-size: 15rem;
+    cursor: pointer;
+}
+input[type="file"] {
+    display: none;
+}
+.mp-text {
+    font-family: var(--headings);
+}
+.mp-nullable-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.mp-nullable-container input {
+    position: relative;
+}
+.mp-nullable-container span {
+    position: absolute;
+    margin-left: -33rem;
+}
+.acc-del-open {
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    animation-name: modaldel;
+    animation-duration: .5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.acc-del-close {
+    display: none;
+}
+@keyframes modaldel {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+.acc-del {
+    width: 20rem;
+    height: 15rem;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: .5rem;
+}
+.acc-del-cancel {
+    margin-left: 1.5rem;
+}
+
+/* Exchange part */
+.bi-book-fill::before {
+    width: 8rem;
+    height: 8rem;
+    border: 5px solid;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.bi-book-fill {
+    cursor: pointer;
+}
+.book-picture {
+    width: 7rem;
+    height: 7rem;
+    object-fit: cover;
+    cursor: pointer;
+    margin: 0 .5rem;
+    
+}
+.exc-form-control {
+    resize: both;
+    overflow-y:auto;
+    max-height: 15rem;
+    width: 20rem;
+    transition: all .3s ease-in;
+}
+
+@media only screen and (max-width: 600px) {
+    .book-picture {
+        width: 4rem;
+        height: 4rem;
+        object-fit: cover;
+        cursor: pointer;
+        margin: 0 .2rem;
+    }
+}
+
+/* Book part */
+/* Pictures */
+.image-close {
+    display: none;
+}
+.image-open {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    justify-self: center;
+    align-self: center;
+    animation-name: modalimg;
+    animation-duration: .5s;
+}
+.book-modal {
+    cursor: zoom-out;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1;
+}
+.img-fluid {
+    animation-name: modalbg;
+    animation-duration: .5s;
+}
+@keyframes modalimg {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+@keyframes modalbg {
+    0% {background-color: rgba(0, 0, 0, 0);}
+    100% {background-color: rgba(0, 0, 0, 0.9);}
+}
+/* Offer */
+.offer-modal {
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1;
+}
+.offer-close {
+    display: none !important;
+}
+.offer-open {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll !important;
+    animation-name: modalinp;
+    animation-duration: .5s;
+}
+@keyframes modalinp {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+.offer_overflow {
+    max-width: 10rem;
+    text-align: left;
+}
+  @media only screen and (max-width: 1200px) {
+    .offer_overflow {
+        white-space: wrap;
+        overflow: hidden;
+        text-align: left;
+    }
+    .list-group-item-action {
+        flex-wrap: wrap;
+    }
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.footer {
+    height: 60px;
+    padding: 10px 10px;
+    font-weight:  bold;
+}
