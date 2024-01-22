@@ -1080,5 +1080,5 @@ def exchange():
             return redirect("/myprofile")
         return render_template("exchange.html", greet=greet_user(), picture=profile_picture(), message_notification=message_notification(), offer_notification=offer_notification(), conditions=conditions)
 
-if __name__ = "__main__":
+if __name__ == "__main__":
     app.run(debug=False, host="0.0.0.0")
