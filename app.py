@@ -18,7 +18,7 @@ app = Flask(__name__)
 app.secret_key = "@asdas#4%223"
 
 # Use sqlite database with cs50
-db = SQL("sqlite:///exchange.db")
+db = SQL("mysql://gj5mnr96m8bvnk1j:smc1tv7c96nni1dy@xlf3ljx3beaucz9x.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/p13bnh04tq7o97lk")
 
 # Configure session
 SESSION_TYPE = "filesystem"
